@@ -436,16 +436,16 @@
 
       
         <p><code>刷新</code>有惊喜!<br>
-        <div id="aplayer-agsJGBRL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+        <div id="aplayer-GgzYirHA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
 			  <script>
 				  var options = {"narrow":false,"autoplay":true,"showlrc":3,"mode":"random","mutex":true,"theme":"#e6d0b2","preload":"metadata","listmaxheight":"513px","music":[{"title":"雨だれの歌","author":"久保ユリカ","url":"https://ddns.menhood.wang:2233/music/violet/TRUE%20-%20Sincerely.mp3","pic":"https://ddns.menhood.wang:2233/music/violet/violet-music.jpg","lrc":"https://ddns.menhood.wang:2233/music/violet/Sincerely.lrc"}]};
-				  options.element = document.getElementById("aplayer-agsJGBRL");
+				  options.element = document.getElementById("aplayer-GgzYirHA");
 				  var ap = new APlayer(options);
 			    window.aplayers || (window.aplayers = []);
 				  window.aplayers.push(ap);
 			  </script></p>
 
-    <div id="aplayer-YpcJqdxR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="38033243" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-IUIKjaQr" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="38033243" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
       
     </div>
     
@@ -765,11 +765,17 @@ socket.on('update_online_count', function(count){$('#online-count').html(count);
 const ap0 = new APlayer({
     container: document.getElementById('aplayer0'),
     fixed: true,
+    autoplay: true,
+    loop: 'all',
+    order: 'random',
+    preload: 'auto',
+    theme: '#ee82ee',
     audio: [{
         name: 'Sincerely',
         artist: 'VE.O.S.T',
         url: 'https://menhood.320.io/?/music/violet/TRUE%20-%20Sincerely.mp3',
         cover: 'https://menhood.320.io/?/music/violet/violet-music.jpg',
+        lrc: 'https://menhood.320.io/?/music/violet/Sincerely.lrc',
     }]
 });
 </script>

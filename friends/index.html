@@ -607,11 +607,17 @@ socket.on('update_online_count', function(count){$('#online-count').html(count);
 const ap0 = new APlayer({
     container: document.getElementById('aplayer0'),
     fixed: true,
+    autoplay: true,
+    loop: 'all',
+    order: 'random',
+    preload: 'auto',
+    theme: '#ee82ee',
     audio: [{
         name: 'Sincerely',
         artist: 'VE.O.S.T',
         url: 'https://menhood.320.io/?/music/violet/TRUE%20-%20Sincerely.mp3',
         cover: 'https://menhood.320.io/?/music/violet/violet-music.jpg',
+        lrc: 'https://menhood.320.io/?/music/violet/Sincerely.lrc',
     }]
 });
 </script>
