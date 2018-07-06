@@ -591,7 +591,21 @@ var socket = io('https://api.menhood.wang/');
 socket.on('connect', function(){socket.emit('login', '<?php echo session_id();?>');});
 socket.on('update_online_count', function(count){$('#online-count').html(count);});
 </script>
-
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<div id="aplayer0"></div>
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script>
+const ap0 = new APlayer({
+    container: document.getElementById('aplayer0'),
+    fixed: true,
+    audio: [{
+        name: 'Sincerely',
+        artist: 'VE.O.S.T',
+        url: 'https://menhood.320.io/?/music/violet/TRUE%20-%20Sincerely.mp3',
+        cover: 'https://menhood.320.io/?/music/violet/violet-music.jpg',
+    }]
+});
+</script>
         
 
 

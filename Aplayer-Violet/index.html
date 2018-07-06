@@ -436,16 +436,16 @@
 
       
         <p><code>刷新</code>有惊喜!<br>
-        <div id="aplayer-mUzDyMni" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+        <div id="aplayer-agsJGBRL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
 			  <script>
 				  var options = {"narrow":false,"autoplay":true,"showlrc":3,"mode":"random","mutex":true,"theme":"#e6d0b2","preload":"metadata","listmaxheight":"513px","music":[{"title":"雨だれの歌","author":"久保ユリカ","url":"https://ddns.menhood.wang:2233/music/violet/TRUE%20-%20Sincerely.mp3","pic":"https://ddns.menhood.wang:2233/music/violet/violet-music.jpg","lrc":"https://ddns.menhood.wang:2233/music/violet/Sincerely.lrc"}]};
-				  options.element = document.getElementById("aplayer-mUzDyMni");
+				  options.element = document.getElementById("aplayer-agsJGBRL");
 				  var ap = new APlayer(options);
 			    window.aplayers || (window.aplayers = []);
 				  window.aplayers.push(ap);
 			  </script></p>
 
-    <div id="aplayer-JDXjkNjk" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="38033243" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-YpcJqdxR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="38033243" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
       
     </div>
     
@@ -758,7 +758,21 @@ var socket = io('https://api.menhood.wang/');
 socket.on('connect', function(){socket.emit('login', '<?php echo session_id();?>');});
 socket.on('update_online_count', function(count){$('#online-count').html(count);});
 </script>
-
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<div id="aplayer0"></div>
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script>
+const ap0 = new APlayer({
+    container: document.getElementById('aplayer0'),
+    fixed: true,
+    audio: [{
+        name: 'Sincerely',
+        artist: 'VE.O.S.T',
+        url: 'https://menhood.320.io/?/music/violet/TRUE%20-%20Sincerely.mp3',
+        cover: 'https://menhood.320.io/?/music/violet/violet-music.jpg',
+    }]
+});
+</script>
         
 
 
