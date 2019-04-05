@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://github.menhood.wang/"/>
-  <updated>2019-04-05T16:53:13.000Z</updated>
+  <updated>2019-04-05T17:01:27.000Z</updated>
   <id>http://github.menhood.wang/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://github.menhood.wang/2019/04/06/New-Begin/"/>
     <id>http://github.menhood.wang/2019/04/06/New-Begin/</id>
     <published>2019-04-05T16:50:08.000Z</published>
-    <updated>2019-04-05T16:53:13.000Z</updated>
+    <updated>2019-04-05T17:01:27.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p>本来打算迁移Typeo博客到Hexo的，但是数据量一大完全撑不住，所以放GitHub当成纯粹和代码相关的站还是挺好的。</p><p>下一步开始学习VUE，从慕课网上找了一个，希望自己能坚持下去</p><p><a href="https://www.imooc.com/learn/935" target="_blank" rel="noopener">https://www.imooc.com/learn/935</a></p><p>加油！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p>本来打算迁移Typeo博客到Hexo的，但是数据量一大完全撑不住，所以放GitHub当成纯粹和代码相关的站还是挺好的。</p><a id="more"></a><p>下一步开始学习VUE，从慕课网上找了一个，希望自己能坚持下去</p><p><a href="https://www.imooc.com/learn/935" target="_blank" rel="noopener">https://www.imooc.com/learn/935</a></p><p>加油！</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;新的开始&quot;&gt;&lt;a href=&quot;#新的开始&quot; class=&quot;headerlink&quot; title=&quot;新的开始&quot;&gt;&lt;/a&gt;新的开始&lt;/h2&gt;&lt;p&gt;本来打算迁移Typeo博客到Hexo的，但是数据量一大完全撑不住，所以放GitHub当成纯粹和代码相关的站还是挺好的。&lt;/p
-      
+      &lt;h2 id=&quot;新的开始&quot;&gt;&lt;a href=&quot;#新的开始&quot; class=&quot;headerlink&quot; title=&quot;新的开始&quot;&gt;&lt;/a&gt;新的开始&lt;/h2&gt;&lt;p&gt;本来打算迁移Typeo博客到Hexo的，但是数据量一大完全撑不住，所以放GitHub当成纯粹和代码相关的站还是挺好的。&lt;/p&gt;
     
     </summary>
     
