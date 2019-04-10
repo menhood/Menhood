@@ -22,7 +22,7 @@
     <meta name="description" content="援军的代码记录小本本">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>援军的代码记录小本本.</title>
+    <title>2 webpack配置项目加载各种静态资源及css预处理器 · 援军的代码记录小本本.</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">援军的代码记录小本本..</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">2 webpack配置项目加载各种静态资源及css预处理器</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">援军的代码记录小本本..</a>
 </header>
@@ -220,24 +231,78 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            2 webpack配置项目加载各种静态资源及css预处理器
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vue">vue</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="webpack">webpack</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vue-loader">vue-loader</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">337</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,80 +403,71 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/08/2-webpack配置项目加载各种静态资源及css预处理器/">
-            
-                <span>2 webpack配置项目加载各种静态资源及css预处理器</span>
-        </a>
-        <div class="abstract-content">
-            <p>配置环境，插件模块，处理静态资源，预处理css<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vue">vue</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="webpack">webpack</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vue-loader">vue-loader</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>配置环境，插件模块，处理静态资源，预处理css<br><a id="more"></a></p>
+<h2 id="配置模块"><a href="#配置模块" class="headerlink" title="配置模块"></a>配置模块</h2><p>配置<code>webpack.config.js</code>，注意配置中的逗号<code>,</code>，我因为少了一个导致build失败<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; VueLoaderPlugin &#125; = <span class="built_in">require</span>(<span class="string">'vue-loader'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'src/index.js'</span>),</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">        path: path.join(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.vue$/</span>, <span class="attr">loader</span>: <span class="string">'vue-loader'</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.vue\.html$/</span>, <span class="attr">loader</span>: <span class="string">'vue-loader'</span> &#125;,</span><br><span class="line">            &#123; </span><br><span class="line">                test: <span class="regexp">/\.css$/</span>, </span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span> </span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.styl/</span>,<span class="comment">//支持css预处理</span></span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span>,</span><br><span class="line">                    <span class="string">'stylus-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.(gif|jpg|jpeg|png|svg)$/</span>,<span class="comment">//匹配图片文件</span></span><br><span class="line">                use: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        options: &#123;</span><br><span class="line">                            limit: <span class="number">1024</span>,<span class="comment">//限制图片大小，符合标准的将会使用base64编码以减少请求</span></span><br><span class="line">                            name: <span class="string">'[name].[ext]'</span><span class="comment">//文件重命名，名称+后缀</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> VueLoaderPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码引用的模块有<code>style-loader</code>,<code>css-loader</code>,<code>stylus-loader</code>,<code>url-loader</code>,用于处理css样式以及文件名称</p>
+<p>需要安装依赖的包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i style-loader css-loader stylus-loader url-loader filse-loader</span><br></pre></td></tr></table></figure></p>
+<h2 id="引入模块"><a href="#引入模块" class="headerlink" title="引入模块"></a>引入模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./app.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./assets/styles/test.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./assets/styles/test-stylus.styl'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./assets/images/logo-tv.png'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root =<span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(root)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue (&#123;</span><br><span class="line">    rander: <span class="function">(<span class="params">h</span>)=&gt;</span>h(App)</span><br><span class="line">&#125;).$mount(root)</span><br></pre></td></tr></table></figure>
+<h2 id="打包生成"><a href="#打包生成" class="headerlink" title="打包生成"></a>打包生成</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>生成后会在<code>dist/bundle.js</code>中发现静态资源css和小图片文件被加载到同一个js文件中，webpack为我们处理了相关的静态资源</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/07/1-vue-loader-webpack项目配置/">
-            
-                <span>1 vue-loader+webpack项目配置</span>
-        </a>
-        <div class="abstract-content">
-            <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
-<li>新建项目（创建目录结构，创建package.json)</li>
-<li>安装依赖</li>
-<li>run build</li>
-</ol>
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://github.menhood.wang">Menhood</a>
+            </p><p>原文链接：<a href="http://github.menhood.wang/2019/04/08/2-webpack配置项目加载各种静态资源及css预处理器/">http://github.menhood.wang/2019/04/08/2-webpack配置项目加载各种静态资源及css预处理器/</a>
+            </p><p>发表日期：<a href="http://github.menhood.wang/2019/04/08/2-webpack配置项目加载各种静态资源及css预处理器/">April 8th 2019, 10:53:57 pm</a>
+            </p><p>更新日期：<a href="http://github.menhood.wang/2019/04/08/2-webpack配置项目加载各种静态资源及css预处理器/">April 11th 2019, 12:07:16 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vue">vue</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="webpack">webpack</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vue-loader">vue-loader</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/07/1-vue-loader-webpack项目配置/" title="1 vue-loader+webpack项目配置">
+                    <div class="prevTitle">1 vue-loader+webpack项目配置</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "1aNf2FnprneMCfVDM9brwg7T-gzGzoHsz",
+        appKey: "wlEWgTC2mVmhh7QgRtG5WCOP",
+        placeholder: "W sth",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -497,6 +553,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置模块"><span class="toc-number">1.</span> <span class="toc-text">配置模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入模块"><span class="toc-number">2.</span> <span class="toc-text">引入模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包生成"><span class="toc-number">3.</span> <span class="toc-text">打包生成</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -662,6 +736,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
